@@ -1,0 +1,36 @@
+# Exercise 2.17 (from https://runestone.academy/ns/books/published/py4e-int/variables/WriteCode.html) adapted to test the use of catch exceptions.
+
+# Many people keep time using a 24 hour clock (11 is 11am and 23 is 11pm, 0 is midnight). 
+# If it is currently 13 and you set your alarm to go off in 50 hours, it will be 15 (3pm). 
+# Write a Python program to solve the general version of the above problem. 
+# Ask the user for the time now (in hours), and then ask for the number of hours to wait for the alarm. 
+# Your program should output what the time will be on the clock when the alarm goes off. 
+# Using the ``int()`` function and modulus operator ``%`` could come in handy!
+
+day = 24
+
+while True: # é usado para gerar um loop infinito
+    current_time = input("What is the time now (only the hour in numbers)? ") #Exemplo: 13 
+    
+    # Caso seja digitado caractere que não seja número, cairá no erro e continuará o loop. Se não, fará a conversão e terminará o loop passando para o próximo bloco.
+    try:    
+        current_time = int(current_time) # converte variável do input (que é sempre string) para integer
+        break # "quebra" o loop.
+    except:
+        print("Caractere não aceito.")
+
+while True: # é usado para gerar um loop infinito     
+    waiting_time = input ("Number of hours to wait: ") #Exemplo: 50
+    
+    # Caso seja digitado caractere que não seja número, cairá no erro e continuará o loop. Se não, fará a conversão e terminará o loop passando para o próximo bloco.
+    try:
+        waiting_time = int(waiting_time) # converte variável do input (que é sempre string) para integer
+        break # "quebra" o loop.
+    except:
+        print("Caractere não aceito.")
+        
+# soma (+) as variáveis current_time e waiting_time, divide pela variável day e retorna o resto da divisão (%).
+hours = (current_time + waiting_time) % day  #Exemplo: #15 ou (3pm)
+
+print("The alarm will go off at " + str(hours) + " hours")
+
