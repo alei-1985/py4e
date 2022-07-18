@@ -24,14 +24,12 @@ while True:
     try:   
         score = input ("Digite a nota no formato: 0.0 ==> " )        
         score = float(score)
-        print(score)
+        
         if score >= 0.0 and score <= 1.0:        
             if score >= 0.6 and score <= 1.0:           
-                for key, value in dict_grade.items():
-                    print (key, value)
+                for key, value in dict_grade.items():        
                     if grade == "" and score >= value:
-                        grade = key
-                        print (grade)
+                        grade = key        
                         break
                 break            
             if score >= 0.0 and score < 0.6:
