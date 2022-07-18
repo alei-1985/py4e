@@ -1,41 +1,44 @@
-#https://runestone.academy/ns/books/published/py4e-int/conditional/WriteCode.html
-#Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error message. If the score is between 0.0 and 1.0, print a grade using the following table:
+###! python3
+###  py4e_runestone_413.py
 
- #Score   Grade
-#>= 0.9     A
-#>= 0.8     B
+# https://runestone.academy/ns/books/published/py4e-int/conditional/WriteCode.html
+# Write a program to prompt for a score between 0.0 and 1.0.
+# If the score is out of range, print an error message.
+# If the score is between 0.0 and 1.0, print a grade using the following table:
+
+ #Score   Grade         Para testar uso:
+#>= 0.9     A               Enter score: 0.95
+#>= 0.8     B               A
 #>= 0.7     C
 #>= 0.6     D
 # < 0.6     F
-#Enter score: 0.95
-#A
+
+#   -----------------------------------------------------------------
 
 grade = ""
+dict_grade = {"A": 0.9,
+              "B": 0.8,
+              "C": 0.7,
+              "D": 0.6}
 while True:
-    try:
-        score = input ("Digite a nota no formato: 0.0 ==> " )
+    try:   
+        score = input ("Digite a nota no formato: 0.0 ==> " )        
         score = float(score)
-        if score >= 0.0 and score <= 1.0:
-            dict_grade = {"A": 0.9,
-                          "B": 0.8,
-                          "C": 0.7,
-                          "D": 0.6}
-            for key, value in dict_grade.items():
-                if grade == "":
-                    if score >= value:
+        print(score)
+        if score >= 0.0 and score <= 1.0:        
+            if score >= 0.6 and score <= 1.0:           
+                for key, value in dict_grade.items():
+                    print (key, value)
+                    if grade == "" and score >= value:
                         grade = key
+                        print (grade)
                         break
-                    else:
-                        grade = "E"
-                else:
-                    break          
-        else:
-            print ("nota fora dos parâmetros")  
-        print("a nota do alfabeto é: " + grade)
-        break
+                break            
+            if score >= 0.0 and score < 0.6:
+                grade = "E"
+                break        
+        else:            
+            print ("nota fora dos parâmetros")
     except:
         print('Nota não está no formato informado.')
-        
-        
-        
-        
+print("a nota do alfabeto é: " + grade)
