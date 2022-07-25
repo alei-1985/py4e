@@ -1,0 +1,8 @@
+#função que retira o primeiro a minúsculo da string
+def first_a_gone(string):
+    posicao = string.find('a')          # atribui a variável o índice em que se encontra o primeiro 'a'
+    primeira_parte = string[:posicao]   # atribui a variável os caracteres da string começando no 0 e indo até valor de posicao
+    ultima_parte = string[posicao+1:]   # atribui a variável os caracteres da string começando no valor da posição+1 até o fim
+    nova = primeira_parte+ultima_parte  # junta as duas partes, formando a nova string.
+    
+    return nova
