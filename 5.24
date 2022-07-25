@@ -1,3 +1,7 @@
+#   Write a function called first_a_gone that takes in string as a parameter and returns a new string without the first lowercase ‘a’. 
+#   For example, first_a_gone('australia') should return "ustralia". (Note: Don’t worry about accounting for strings that don’t have a lowercase ‘a’.)
+#   https://runestone.academy/ns/books/published/py4e-int/functions/function_string_writecode.html
+
 #função que retira o primeiro a minúsculo da string
 def first_a_gone(string):
     posicao = string.find('a')          # atribui a variável o índice em que se encontra o primeiro 'a'
